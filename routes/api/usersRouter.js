@@ -6,8 +6,10 @@ import {
   logoutUser,
   getCurrentUsers,
   updateUserSubscription,
+  updateAvatar,
 } from "../../controllers/usersController.js";
 import { authenticateToken } from "../../middlewares/authenticateToken.js";
+import { upload } from "../../middlewares/upload.js";
 
 const router = express.Router();
 
@@ -20,4 +22,12 @@ router.get("/logout", authenticateToken, ctrlWrapper(logoutUser));
 router.get("/current", authenticateToken, ctrlWrapper(getCurrentUsers));
 
 router.patch("/", authenticateToken, ctrlWrapper(updateUserSubscription));
+
+router.patch(
+  "/avatars",
+  authenticateToken,
+  upload.single("avatar"),
+  ctrlWrapper(updateAvatar)
+);
+
 export { router };
