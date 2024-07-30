@@ -1,4 +1,4 @@
-## GoIT Node.js Course Template Homework 2-6
+## GoIT Node.js Course Template Homework 2-6 branches
 
 Please fork this repository to complete your homework assignments (2-6).
 Forking will create a repository on your http://github.com account.
